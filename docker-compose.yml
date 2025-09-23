@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  fastapi_app:
+    image: ${{ secrets.DOCKER_USERNAME }}/fraud-detection-api:latest
+    ports:
+      - "8000:8000"
+    restart: always
+
+  streamlit_app:
+    image: ${{ secrets.DOCKER_USERNAME }}/streamlit-app:latest
+    ports:
+      - "8501:8501"
+    restart: always
