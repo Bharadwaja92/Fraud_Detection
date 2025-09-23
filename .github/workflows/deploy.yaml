@@ -55,7 +55,17 @@ jobs:
           host: ${{ secrets.VM_HOST }}           # The public IP of your VM, stored as a secret
           username: ${{ secrets.VM_USERNAME }}   # Your VM's username
           key: ${{ secrets.SSH_PRIVATE_KEY }}    # Your SSH private key, stored as a secret
-          # I have not setup all the 3 above. Need your help here. I already created the Docker username and password secrets in the git repo
           script: |
+            # Step 1: Install UFW if it's not already there
+            sudo apt-get update
+            sudo apt-get install -y ufw
+
+            # Step 2: Configure and enable the firewall
+            sudo ufw allow 22/tcp
+            sudo ufw allow 8000/tcp
+            sudo ufw allow 8501/tcp
+            sudo ufw --force enable
+
+            # Step 3: Change to the app directory and deploy the containers
             cd /home/saibharadwaj/app
             docker-compose up -d
