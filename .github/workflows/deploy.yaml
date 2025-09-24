@@ -73,16 +73,17 @@ jobs:
             
             # Use 'git pull' if the repo already exists, otherwise 'git clone'
             if [ -d "Fraud_Detection" ]; then
-                echo "Directory exists. Pulling latest changes."
-                cd Fraud_Detection
-                git pull
-            else
-                git clone --branch develop https://github.com/Bharadwaja92/Fraud_Detection.git
-                echo "Cloned the repository. Now at"
-                pwd
+                echo "Directory exists. Delete directory."
                 ls -lah .
-                cd Fraud_Detection
+                rm -r Fraud_Detection
             fi
+
+            # else
+            git clone --branch develop https://github.com/Bharadwaja92/Fraud_Detection.git
+            echo "Cloned the repository. Now at"
+            pwd
+            ls -lah .
+            cd Fraud_Detection
 
             # Check!!!
             pwd
