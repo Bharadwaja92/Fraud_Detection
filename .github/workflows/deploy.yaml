@@ -90,4 +90,4 @@ jobs:
             cd /home/saibharadwaj/app/Fraud_Detection
             export DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}
 
-            docker-compose up -d
+            sudo docker-compose up -d
