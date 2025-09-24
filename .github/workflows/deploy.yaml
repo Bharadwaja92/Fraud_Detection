@@ -90,4 +90,5 @@ jobs:
             cd /home/saibharadwaj/app/Fraud_Detection
             export DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}
 
-            sudo docker-compose up -d
+            # Use sudo with -E to preserve the environment variables
+            sudo -E docker-compose up -d
