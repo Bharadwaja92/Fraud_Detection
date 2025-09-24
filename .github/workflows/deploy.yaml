@@ -72,12 +72,12 @@ jobs:
             cd /home/saibharadwaj/app
             
             # Use 'git pull' if the repo already exists, otherwise 'git clone'
-            if [ -d "fraud-detection-engine" ]; then
-                cd fraud-detection-engine
+            if [ -d "Fraud_Detection" ]; then
+                cd Fraud_Detection
                 git pull
             else
-                git clone https://github.com/Bharadwaja92/Fraud_Detection.git                
-                cd fraud-detection-engine
+                git clone --branch develop https://github.com/Bharadwaja92/Fraud_Detection.git
+                cd Fraud_Detection
             fi
 
             # Step 4: Change to the app directory and deploy the containers
