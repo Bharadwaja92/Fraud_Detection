@@ -80,6 +80,10 @@ jobs:
                 cd Fraud_Detection
             fi
 
+            # Check!!!
+            pwd
+            ls -lah
+
             # Step 4: Change to the app directory and deploy the containers
             sudo apt-get install -y docker-compose
             # mkdir -p /home/saibharadwaj/app
