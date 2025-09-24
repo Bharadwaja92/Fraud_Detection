@@ -91,4 +91,4 @@ jobs:
             export DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}
 
             # Use sudo with -E to preserve the environment variables
-            sudo -E docker-compose up -d
+            sudo -E docker-compose up -d --force-recreate
