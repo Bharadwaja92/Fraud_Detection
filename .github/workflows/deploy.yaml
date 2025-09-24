@@ -66,10 +66,24 @@ jobs:
             sudo ufw allow 8501/tcp
             sudo ufw --force enable
 
-            # Step 3: Change to the app directory and deploy the containers
-            sudo apt-get install -y docker-compose
+             # Step 3: Install git and clone the repository
+            sudo apt-get install -y git
             mkdir -p /home/saibharadwaj/app
             cd /home/saibharadwaj/app
-            cp ../docker-compose.yml .
-            cp ../start.sh .
+            
+            # Use 'git pull' if the repo already exists, otherwise 'git clone'
+            if [ -d "fraud-detection-engine" ]; then
+                cd fraud-detection-engine
+                git pull
+            else
+                git clone https://github.com/Bharadwaja92/Fraud_Detection.git                
+                cd fraud-detection-engine
+            fi
+
+            # Step 4: Change to the app directory and deploy the containers
+            sudo apt-get install -y docker-compose
+            # mkdir -p /home/saibharadwaj/app
+            # cd /home/saibharadwaj/app
+            # cp ../docker-compose.yml .
+            # cp ../start.sh .
             docker-compose up -d
