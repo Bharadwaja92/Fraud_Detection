@@ -73,20 +73,24 @@ jobs:
             
             # Use 'git pull' if the repo already exists, otherwise 'git clone'
             if [ -d "Fraud_Detection" ]; then
+                echo "Directory exists. Pulling latest changes."
                 cd Fraud_Detection
                 git pull
             else
                 git clone --branch develop https://github.com/Bharadwaja92/Fraud_Detection.git
+                echo "Cloned the repository. Now at"
+                pwd
+                ls -lah .
                 cd Fraud_Detection
             fi
 
             # Check!!!
             pwd
-            echo "1"
+            echo "Check 1"
             ls -lah
-            echo "2"
+            echo "Check 2"
             ls -lah ..
-            echo "3"
+            echo "Check 3"
             ls -lah ../Fraud_Detection
 
             # Step 4: Change to the app directory and deploy the containers
