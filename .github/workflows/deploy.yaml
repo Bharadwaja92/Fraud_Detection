@@ -90,5 +90,5 @@ jobs:
             cd /home/saibharadwaj/app/Fraud_Detection
             export DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}
 
-            # Use sudo with -E to preserve the environment variables
+            # Use sudo with -E to preserve the environment variables. Also use --force-recreate to ensure the containers are recreated.
             sudo -E docker-compose up -d --force-recreate
