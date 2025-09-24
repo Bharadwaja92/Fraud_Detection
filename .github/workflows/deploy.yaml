@@ -70,4 +70,6 @@ jobs:
             sudo apt-get install -y docker-compose
             mkdir -p /home/saibharadwaj/app
             cd /home/saibharadwaj/app
+            cp ../docker-compose.yml .
+            cp ../start.sh .
             docker-compose up -d
