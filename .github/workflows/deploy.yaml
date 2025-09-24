@@ -82,7 +82,12 @@ jobs:
 
             # Check!!!
             pwd
+            echo "1"
             ls -lah
+            echo "2"
+            ls -lah .
+            echo "3"
+            ls -lah ..
 
             # Step 4: Change to the app directory and deploy the containers
             sudo apt-get install -y docker-compose
