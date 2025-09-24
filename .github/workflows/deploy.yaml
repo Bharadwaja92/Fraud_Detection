@@ -74,7 +74,6 @@ jobs:
             # Use 'git pull' if the repo already exists, otherwise 'git clone'
             if [ -d "Fraud_Detection" ]; then
                 echo "Directory exists. Delete directory."
-                ls -lah .
                 rm -r Fraud_Detection
             fi
 
@@ -85,19 +84,6 @@ jobs:
             ls -lah .
             cd Fraud_Detection
 
-            # Check!!!
-            pwd
-            echo "Check 1"
-            ls -lah
-            echo "Check 2"
-            ls -lah ..
-            echo "Check 3"
-            ls -lah ../Fraud_Detection
-
             # Step 4: Change to the app directory and deploy the containers
             sudo apt-get install -y docker-compose
-            # mkdir -p /home/saibharadwaj/app
-            # cd /home/saibharadwaj/app
-            # cp ../docker-compose.yml .
-            # cp ../start.sh .
             docker-compose up -d
