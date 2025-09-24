@@ -86,4 +86,8 @@ jobs:
 
             # Step 4: Change to the app directory and deploy the containers
             sudo apt-get install -y docker-compose
+
+            cd /home/saibharadwaj/app/Fraud_Detection
+            export DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}
+
             docker-compose up -d
